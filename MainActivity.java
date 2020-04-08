@@ -13,6 +13,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     private Button signup;
@@ -52,8 +57,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
               if ( task.isSuccessful()){
-                  Intent intent=new Intent(MainActivity.this,anasayfa.class);
-                  startActivity(intent);
+                  final String id =mAuth.getCurrentUser().getUid();
+                  FirebaseDatabase database = FirebaseDatabase.getInstance();
+                  DatabaseReference myRef2 = database.getReference().child("tbl_musteri").child(id);
+                  myRef2.addValueEventListener(new ValueEventListener() {
+                      @Override
+                      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                          keepdata model= new keepdata();
+                          model=dataSnapshot.getValue(model.getClass());
+
+                          if (model.gettip().equals("musteri")){
+                              Intent intent=new Intent(MainActivity.this,garsonAnasayfa.class);
+                              startActivity(intent);
+                          }
+                          else if(model.gettip().equals("garson")){
+                              Intent intent=new Intent(MainActivity.this,anasayfa.class);
+                              startActivity(intent);
+                          }
+                      }
+
+                      @Override
+                      public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                      }
+                  });
               }
             }
         });
