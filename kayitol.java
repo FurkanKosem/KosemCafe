@@ -74,7 +74,7 @@ public class kayitol extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Intent intent=new Intent(kayitol.this,anasayfa.class);
+                                Intent intent=new Intent(kayitol.this,MainActivity.class);
                                 startActivity(intent);
                             }
                         }

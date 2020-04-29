@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
                           if (model.gettip().equals("musteri")){
                               Intent intent=new Intent(MainActivity.this,garsonAnasayfa.class);
+                              intent.putExtra("mid",id);
                               startActivity(intent);
                           }
                           else if(model.gettip().equals("garson")){

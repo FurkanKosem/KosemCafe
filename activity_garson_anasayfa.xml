@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".garsonAnasayfa">
+    tools:context=".garsonAnasayfa"
+    android:background="@color/blue">
 
 
 <LinearLayout
@@ -15,8 +16,8 @@
     >
 
     <ImageView
-        android:id="@+id/pngresmi"
-        android:layout_width="wrap_content"
+        android:id="@+id/sepetekle"
+        android:layout_width="134dp"
         android:layout_height="90dp"
         android:src="@mipmap/pngresmi" />
 
@@ -48,20 +49,29 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-       >
+        android:background="@color/blue">
 
         <Button
             android:id="@+id/sicak"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sıcak İçecekler" />
+            android:text="Sıcak İçecekler"
+            android:background="@drawable/btn_shape_capsule"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="3.5mm"
+            android:layout_marginTop="20dp"/>
 
         <Button
             android:id="@+id/soguk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Soğuk İçecekler"
-            android:textSize="15dp" />
+            android:background="@drawable/btn_shape_capsule"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="3.5mm"
+            android:layout_marginTop="20dp"/>
 
 
         <Button
@@ -69,22 +79,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Yemek" />
+            android:text="Yemek"
+            android:background="@drawable/btn_shape_capsule" android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="3.5mm"
+            android:layout_marginTop="20dp"/>
 
         <Button
             android:id="@+id/nargile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nargile"
-            android:textSize="15dp"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:background="@drawable/btn_shape_capsule"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="3.5mm"
+            android:layout_marginTop="20dp"/>
 
         <Button
             android:id="@+id/salata"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Salata"
-            android:textSize="15dp" />
+            android:background="@drawable/btn_shape_capsule"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="3.5mm"
+            android:layout_marginTop="20dp"/>
 
 
     </LinearLayout>

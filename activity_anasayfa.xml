@@ -5,41 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".anasayfa">
+    tools:context=".anasayfa"
+    android:background="@color/blue">
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Gelen Siparişler" />
+        android:text="Gelen Siparişler"
+        android:background="@drawable/btn_shape_capsule"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="3.5mm"
+        android:layout_marginTop="150dp"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Bekleyen Siparişler" />
+        android:text="Bekleyen Siparişler"
+        android:background="@drawable/btn_shape_capsule"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="3.5mm"/>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Hesap" />
+        android:text="Hesap"
+        android:background="@drawable/btn_shape_capsule"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="3.5mm"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Misafirlerim" />
+        android:text="Misafirlerim"
+        android:background="@drawable/btn_shape_capsule"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="3.5mm"/>
 
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Ürün Ekle" />
+        android:text="Ürün Ekle"
+        android:background="@drawable/btn_shape_capsule"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="3.5mm"/>
 
 </LinearLayout>

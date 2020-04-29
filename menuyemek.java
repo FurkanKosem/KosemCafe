@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -15,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class menuyemek extends AppCompatActivity {
 
@@ -26,11 +29,17 @@ public class menuyemek extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuyemek);
+
+        final String musteriId= getIntent().getExtras().getString("mid");
+
         yemekliste=(ListView) findViewById(R.id.yemekliste);
+
         arrayList  =new ArrayList<>();
         arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,android.R.id.text1,arrayList);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference mDatabase = database.getReference().child("urun");
+        final DatabaseReference mDatabase = database.getReference().child("urun");
+        final DatabaseReference mDatabase2 = database.getReference().child("sepet").child(musteriId).push();
 
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -51,6 +60,15 @@ public class menuyemek extends AppCompatActivity {
 
             }
         });
+        yemekliste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HashMap<String,String> urun = new HashMap<>();
+                urun.put("urunadi",arrayList.get(position));
 
+
+                mDatabase2.setValue(urun);
+            }
+        });
     }
 }

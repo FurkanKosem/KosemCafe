@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".urunekle"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/blue">
 
 
     <EditText
@@ -14,7 +15,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:padding="15dp"
-        android:hint="Ürününüzün adını giriniz." />
+        android:hint="Ürününüzün adını giriniz."
+        android:textColorHint="@color/white"
+        android:textStyle="italic"
+        />
 
     <EditText
         android:id="@+id/urunkategori"
@@ -22,7 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:padding="15dp"
-        android:hint="Ürününüzün kategorisiniz giriniz" />
+        android:hint="Ürününüzün kategorisiniz giriniz"
+        android:textColorHint="@color/white"
+        android:textStyle="italic"/>
 
     <EditText
         android:id="@+id/urunfiyat"
@@ -30,13 +36,19 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:padding="15dp"
-        android:hint="Ürününüzün fiyatını giriniz." />
+        android:hint="Ürününüzün fiyatını giriniz."
+        android:textColorHint="@color/white"
+        android:textStyle="italic"/>
 
     <Button
         android:id="@+id/butonekle"
-        android:layout_width="wrap_content"
+        android:layout_width="104dp"
         android:layout_height="wrap_content"
-        android:hint="Ekle">
+        android:background="@drawable/btn_shape_capsule"
+        android:text="Ekle"
+        android:textColor="@color/white"
+        android:textSize="3.5mm"
+        android:textStyle="bold">
 
     </Button>
 
