@@ -1,13 +1,13 @@
 package com.example.kosemcafe3;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
                           keepdata model= new keepdata();
                           model=dataSnapshot.getValue(model.getClass());
 
-                          if (model.gettip().equals("musteri")){
+                          if (model != null && model.gettip().equals("musteri")){
                               Intent intent=new Intent(MainActivity.this,garsonAnasayfa.class);
                               intent.putExtra("mid",id);
                               startActivity(intent);
                           }
-                          else if(model.gettip().equals("garson")){
+                          else if(model != null && model.gettip().equals("garson")){
                               Intent intent=new Intent(MainActivity.this,anasayfa.class);
                               startActivity(intent);
                           }

@@ -108,6 +108,17 @@
             android:textSize="3.5mm"
             android:layout_marginTop="20dp"/>
 
+        <Button
+            android:layout_marginTop="90dp"
+            android:id="@+id/cıkısyap2"
+            android:layout_gravity="right"
+            android:background="@drawable/btn_shape_capsule"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Çıkış Yap"/>
+
 
     </LinearLayout>
 

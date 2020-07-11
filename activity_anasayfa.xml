@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Gelen Siparişler"
+        android:text="Onaylanan Siparişler"
         android:background="@drawable/btn_shape_capsule"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -25,11 +25,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Bekleyen Siparişler"
         android:background="@drawable/btn_shape_capsule"
+        android:text="Bekleyen Siparişler"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="3.5mm"/>
+        android:textSize="3.5mm"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button3"
@@ -63,5 +63,18 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="3.5mm"/>
+
+
+
+    <Button
+        android:layout_marginTop="90dp"
+        android:id="@+id/cıkısyap"
+        android:layout_gravity="right"
+        android:background="@drawable/btn_shape_capsule"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Çıkış Yap"/>
 
 </LinearLayout>

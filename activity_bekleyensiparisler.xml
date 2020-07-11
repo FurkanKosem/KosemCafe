@@ -4,16 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menusepet"
-    android:orientation="vertical">
+    tools:context=".bekleyensiparisler">
 
     <ListView
-        android:id="@+id/sepetliste"
+        android:id="@+id/bekleyensiparis"
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
 
     </ListView>
-
 
 
 </LinearLayout>

@@ -1,14 +1,13 @@
 package com.example.kosemcafe3;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +23,7 @@ public class menuyemek extends AppCompatActivity {
     private ListView yemekliste;
     private ArrayAdapter arrayAdapter;
     private ArrayList<String> arrayList;
+    public static int toplamFiyat = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class menuyemek extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference mDatabase = database.getReference().child("urun");
-        final DatabaseReference mDatabase2 = database.getReference().child("sepet").child(musteriId).push();
+        final DatabaseReference mDatabase2 = database.getReference().child("sepet").child(musteriId);
 
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -64,10 +64,14 @@ public class menuyemek extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HashMap<String,String> urun = new HashMap<>();
-                urun.put("urunadi",arrayList.get(position));
+                String urunadi = arrayList.get(position);
+                int fiyat = Integer.parseInt(arrayList.get(0).split("\\D+")[1]);
+                toplamFiyat += fiyat;
+                urun.put("urunadi", urunadi);
+                urun.put("urundurum","Onaylama bekleniyor");
+                mDatabase2.push().setValue(urun);
 
 
-                mDatabase2.setValue(urun);
             }
         });
     }
